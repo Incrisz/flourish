@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kaleidoscopic-pie-2341a3.netlify.app)",
+      "Bash(cp -r template/css .)",
+      "Bash(cp -r template/js .)",
+      "Bash(cp -r template/img .)",
+      "Bash(cp -r template/fonts .)"
+    ]
+  }
+}
