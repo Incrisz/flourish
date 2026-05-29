@@ -55,7 +55,9 @@
   <!-- Home-->
   <section class="home-area element-cover-bg video-variant" id="home" style="background-image:url(img/home.jpg)">
     <div class="video-bg-wrapper">
-      <div id="ytbg"></div>
+      <video id="local-bg-video" autoplay muted loop playsinline>
+        <source src="bloom-academy-bg.mp4" type="video/mp4">
+      </video>
       <div class="video-bg-overlay"></div>
     </div>
     <div class="container h-100">
@@ -710,68 +712,6 @@
   </div>
   <!-- Custom JS (Add your custom JS scripts to this file)-->
   <script src="js/custom.js"></script>
-  <!-- YouTube background video -->
-  <script>
-    (function () {
-      var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(tag);
-    })();
-
-    var _ytPlayer;
-    var _homeSection = document.getElementById('home');
-
-    function setVideoReadyState(isReady) {
-      if (!_homeSection) {
-        return;
-      }
-
-      _homeSection.classList.toggle('video-ready', !!isReady);
-    }
-
-    function disableBackgroundVideo() {
-      setVideoReadyState(false);
-
-      if (_ytPlayer && typeof _ytPlayer.destroy === 'function') {
-        _ytPlayer.destroy();
-      }
-
-      _ytPlayer = null;
-    }
-
-    function onYouTubeIframeAPIReady() {
-      _ytPlayer = new YT.Player('ytbg', {
-        videoId: 'KR97TgpMyrc',
-        playerVars: {
-          autoplay: 1,
-          mute: 1,
-          loop: 1,
-          playlist: 'KR97TgpMyrc',
-          controls: 0,
-          rel: 0,
-          modestbranding: 1,
-          iv_load_policy: 3,
-          disablekb: 1,
-          enablejsapi: 1
-        },
-        events: {
-          onReady: function (e) {
-            e.target.mute();
-            e.target.playVideo();
-            setVideoReadyState(true);
-          },
-          onStateChange: function (e) {
-            if (e.data === YT.PlayerState.ENDED) {
-              e.target.playVideo();
-            }
-          },
-          onError: function () {
-            disableBackgroundVideo();
-          }
-        }
-      });
-    }
-  </script>
 </body>
 
 </html>
