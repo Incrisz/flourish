@@ -45,7 +45,16 @@
 }
 
 
-/* Prevent mobile overscroll revealing home background behind lightboxes */
+/* Prevent mobile overscroll/rubber-band on all sections */
+html, body {
+  overscroll-behavior: none;
+}
+
+.home-area {
+  overscroll-behavior: none;
+  touch-action: pan-x;
+}
+
 .lightbox-wrapper {
   overscroll-behavior: none;
 }
