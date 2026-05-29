@@ -41,4 +41,15 @@
   input.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') sendMessage();
   });
+
+  // Slide widget up when keyboard opens on mobile (Android)
+  var widget = document.getElementById('wa-widget');
+  if (window.visualViewport) {
+    function onViewportChange() {
+      var keyboardHeight = Math.max(0, window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop);
+      widget.style.bottom = (28 + keyboardHeight) + 'px';
+    }
+    window.visualViewport.addEventListener('resize', onViewportChange);
+    window.visualViewport.addEventListener('scroll', onViewportChange);
+  }
 })();
