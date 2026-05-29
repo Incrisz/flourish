@@ -45,6 +45,15 @@
 }
 
 
+/* Prevent mobile overscroll revealing home background behind lightboxes */
+.lightbox-wrapper {
+  overscroll-behavior: none;
+}
+
+.lightbox-wrapper .simplebar-content-wrapper {
+  overscroll-behavior: none;
+}
+
 /* TikTok icon alignment */
 .tiktok-icon {
   display: inline-block;
