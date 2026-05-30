@@ -15,16 +15,17 @@
   var closeBtn = document.getElementById('video-modal-close');
   var iframe = document.getElementById('video-modal-iframe');
 
+  // Move modal to direct body child to escape any stacking context
+  document.body.appendChild(modal);
+
   function openModal(src) {
     iframe.src = src;
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     modal.classList.remove('open');
     iframe.src = '';
-    document.body.style.overflow = '';
   }
 
   document.addEventListener('click', function (e) {

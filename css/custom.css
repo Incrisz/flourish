@@ -125,8 +125,11 @@ html, body {
 #video-modal {
   display: none;
   position: fixed;
-  inset: 0;
-  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
   align-items: center;
   justify-content: center;
 }
@@ -185,10 +188,23 @@ html, body {
 
 @media (max-width: 767px) {
   #video-modal-box {
-    width: 96vw;
+    width: 100vw;
   }
   #video-modal-frame-wrap {
-    padding-bottom: 177.78%;
+    padding-bottom: 0;
+    height: 90vh;
+  }
+  #video-modal-close {
+    top: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
   }
 }
 
