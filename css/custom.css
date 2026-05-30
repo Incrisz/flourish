@@ -153,20 +153,25 @@ html, body {
 
 #video-modal-close {
   position: absolute;
-  top: -38px;
-  right: 0;
-  background: none;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
   border: none;
   color: #fff;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  padding: 0;
-  opacity: 0.85;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #video-modal-close:hover {
-  opacity: 1;
+  background: rgba(0, 0, 0, 0.95);
 }
 
 #video-modal-frame-wrap {
@@ -193,18 +198,6 @@ html, body {
   #video-modal-frame-wrap {
     padding-bottom: 0;
     height: 90vh;
-  }
-  #video-modal-close {
-    top: 6px;
-    right: 6px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
   }
 }
 
