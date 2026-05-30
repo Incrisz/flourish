@@ -8,6 +8,41 @@
  */
 !function(n){"use strict";n((function(){})),n(window).on("load",(function(){}))}(jQuery);
 
+// Custom Video Modal for portfolio
+(function () {
+  var modal = document.getElementById('video-modal');
+  var overlay = document.getElementById('video-modal-overlay');
+  var closeBtn = document.getElementById('video-modal-close');
+  var iframe = document.getElementById('video-modal-iframe');
+
+  function openModal(src) {
+    iframe.src = src;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-video-modal]');
+    if (link) {
+      e.preventDefault();
+      openModal(link.getAttribute('href'));
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+
 // WhatsApp Widget
 (function () {
   var fab = document.getElementById('wa-fab');
